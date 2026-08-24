@@ -189,6 +189,14 @@ export function ProcessArchitecture() {
                 <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.4" />
                 <stop offset="100%" stopColor="#ef4444" stopOpacity="0.4" />
               </linearGradient>
+              {/* Intense path glow filter */}
+              <filter id="glow-path" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
 
             {/* Grid background markers for detailed feel */}
@@ -199,34 +207,38 @@ export function ProcessArchitecture() {
             <path 
               d="M 50 120 L 200 60" 
               stroke="url(#grad-sop)" 
-              strokeWidth={activeNode === 'ingress' || activeNode === 'sop' ? "2.5" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 ? "none" : "5 5"}
+              strokeWidth={activeNode === 'ingress' || activeNode === 'sop' ? "3" : "1.5"} 
+              strokeDasharray={simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'sop' ? "none" : "5 5"}
+              filter={activeNode === 'ingress' || activeNode === 'sop' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${simulationStep >= 0 ? 'animate-[dash_1s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'sop') ? 'animate-[dash_1s_linear_infinite]' : ''}`} 
             />
             <path 
               d="M 50 120 L 200 180" 
               stroke="url(#grad-model)" 
-              strokeWidth={activeNode === 'ingress' || activeNode === 'model' ? "2.5" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 ? "none" : "5 5"}
+              strokeWidth={activeNode === 'ingress' || activeNode === 'model' ? "3" : "1.5"} 
+              strokeDasharray={simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'model' ? "none" : "5 5"}
+              filter={activeNode === 'ingress' || activeNode === 'model' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${simulationStep >= 0 ? 'animate-[dash_1.5s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'model') ? 'animate-[dash_1.5s_linear_infinite]' : ''}`} 
             />
             <path 
               d="M 200 60 L 350 120" 
               stroke="url(#grad-sop-siem)" 
-              strokeWidth={activeNode === 'sop' || activeNode === 'siem' ? "2.5" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 ? "none" : "5 5"}
+              strokeWidth={activeNode === 'sop' || activeNode === 'siem' ? "3" : "1.5"} 
+              strokeDasharray={simulationStep >= 0 || activeNode === 'sop' || activeNode === 'siem' ? "none" : "5 5"}
+              filter={activeNode === 'sop' || activeNode === 'siem' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${simulationStep >= 0 ? 'animate-[dash_1.2s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'sop' || activeNode === 'siem') ? 'animate-[dash_1.2s_linear_infinite]' : ''}`} 
             />
             <path 
               d="M 200 180 L 350 120" 
               stroke="url(#grad-model-siem)" 
-              strokeWidth={activeNode === 'model' || activeNode === 'siem' ? "2.5" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 ? "none" : "5 5"}
+              strokeWidth={activeNode === 'model' || activeNode === 'siem' ? "3" : "1.5"} 
+              strokeDasharray={simulationStep >= 0 || activeNode === 'model' || activeNode === 'siem' ? "none" : "5 5"}
+              filter={activeNode === 'model' || activeNode === 'siem' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${simulationStep >= 0 ? 'animate-[dash_1.4s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'model' || activeNode === 'siem') ? 'animate-[dash_1.4s_linear_infinite]' : ''}`} 
             />
 
             {/* Flowing animated signal packets (Normal Mode) */}
