@@ -7,11 +7,21 @@ AegisFlow Sentinel is a state-of-the-art AI Security Posture & SOP Monitoring Pl
 ## 🌐 Cyber-Vibes Command Dashboard
 Sentinel includes a full-screen dynamic **Kaspersky-inspired Threat Map Watermark** detailing simulated global threat vectors and live server ping sweeps, maintaining top-tier cyber security aesthetics.
 
+### 📊 Live Dashboard Interface
+![AegisFlow Sentinel Dashboard](public/dashboard_screenshot.png)
+
 ---
 
 ## 🏗️ System Architecture
 
 AegisFlow Sentinel processes all prompts, models, and alerts through a secure, multi-stage pipeline designed for safety, speed, and auditability.
+
+### 🎬 Pipeline Walkthrough (Motion Graphics)
+![Interactive Simulation Demo](public/cyber_vibes_preview.webp)
+
+### 🔮 Security Core Advanced Architecture Concept
+![Advanced Security Core Architecture Concept](public/cyber_architecture.png)
+
 
 ```mermaid
 graph TD
