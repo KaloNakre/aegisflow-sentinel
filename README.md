@@ -12,34 +12,13 @@ Sentinel includes a full-screen dynamic **Kaspersky-inspired Threat Map Watermar
 
 ---
 
-## 🏗️ System Architecture
-
-AegisFlow Sentinel processes all prompts, models, and alerts through a secure, multi-stage pipeline designed for safety, speed, and auditability.
+### 🔮 Pipeline Architecture Overview
+![AegisFlow Sentinel Pipeline Architecture](public/cyber_architecture_clean.png)
 
 ### 🎬 Pipeline Walkthrough (Motion Graphics)
 ![Interactive Simulation Demo](public/cyber_vibes_preview.webp)
 
-### 🔮 Security Core Advanced Architecture Concept
-![Advanced Security Core Architecture Concept](public/cyber_architecture.png)
 
-
-```mermaid
-graph TD
-    User([User Prompt Query]) --> Ingress[1. API Ingress Gateway]
-    
-    subgraph Security Posture Pipeline
-        Ingress --> |Validate & Parse| SOP[2. SOP Filter / compliance check]
-        SOP --> |Policy Matching| Model[3. Model Core / LLM Inference]
-        Model --> |Audit output & metrics| SIEM[4. SIEM Threat & Audit Central]
-    end
-
-    SIEM --> Output([Secure Response / Incident Log])
-    
-    style Ingress fill:#0ea5e9,stroke:#0ea5e9,stroke-width:2px,color:#fff
-    style SOP fill:#10b981,stroke:#10b981,stroke-width:2px,color:#fff
-    style Model fill:#a78bfa,stroke:#a78bfa,stroke-width:2px,color:#fff
-    style SIEM fill:#ef4444,stroke:#ef4444,stroke-width:2px,color:#fff
-```
 
 ### 🔍 Detailed Pipeline Breakdown
 
