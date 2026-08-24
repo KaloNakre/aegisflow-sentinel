@@ -56,12 +56,19 @@ export function CyberMapBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 opacity-15">
-      {/* Absolute grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(18,24,38,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(18,24,38,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 opacity-20">
+      {/* AI-Generated Cyber Map Background */}
+      <img 
+        src="/cyber_map_background.png" 
+        alt="Cyber Map Background" 
+        className="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-screen"
+      />
 
-      {/* Cyber world map SVG canvas */}
-      <svg className="w-full h-full min-w-[1200px] min-h-[800px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-70">
+      {/* Absolute grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(14,165,233,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+
+      {/* Cyber world map SVG canvas for dynamic active threat paths */}
+      <svg className="w-full h-full min-w-[1200px] min-h-[800px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80">
         <defs>
           {/* Cyber glowing filters */}
           <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
@@ -81,45 +88,13 @@ export function CyberMapBackground() {
           y1="50%"
           x2="100%"
           y2="50%"
-          stroke="rgba(14, 165, 233, 0.02)"
+          stroke="rgba(14, 165, 233, 0.03)"
           strokeWidth="2"
           style={{ originX: '50%', originY: '50%' }}
           animate={{ rotate: 360 }}
-          transition={{ ease: 'linear', duration: 40, repeat: Infinity }}
+          transition={{ ease: 'linear', duration: 45, repeat: Infinity }}
         />
 
-        {/* World Map Dotted Matrix Structure (Simulating global landmasses) */}
-        {/* North America */}
-        <g opacity="0.15">
-          <circle cx="20%" cy="30%" r="35" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="3 3" />
-          <circle cx="25%" cy="25%" r="20" fill="none" stroke="rgba(255,255,255,0.15)" strokeDasharray="4 2" />
-          <circle cx="15%" cy="35%" r="15" fill="none" stroke="rgba(255,255,255,0.1)" strokeDasharray="2 4" />
-        </g>
-        {/* South America */}
-        <g opacity="0.12">
-          <circle cx="32%" cy="65%" r="40" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="5 3" />
-          <circle cx="34%" cy="75%" r="25" fill="none" stroke="rgba(255,255,255,0.15)" strokeDasharray="3 5" />
-        </g>
-        {/* Europe */}
-        <g opacity="0.18">
-          <circle cx="48%" cy="28%" r="25" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="2 2" />
-          <circle cx="52%" cy="32%" r="30" fill="none" stroke="rgba(255,255,255,0.15)" strokeDasharray="5 5" />
-        </g>
-        {/* Africa */}
-        <g opacity="0.12">
-          <circle cx="50%" cy="55%" r="45" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="4 4" />
-          <circle cx="53%" cy="68%" r="20" fill="none" stroke="rgba(255,255,255,0.15)" strokeDasharray="2 3" />
-        </g>
-        {/* Asia / Siberia */}
-        <g opacity="0.15">
-          <circle cx="70%" cy="25%" r="55" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="6 3" />
-          <circle cx="78%" cy="35%" r="45" fill="none" stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
-          <circle cx="65%" cy="40%" r="35" fill="none" stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
-        </g>
-        {/* Australia */}
-        <g opacity="0.12">
-          <circle cx="82%" cy="75%" r="30" fill="none" stroke="rgba(255,255,255,0.2)" strokeDasharray="4 2" />
-        </g>
 
         {/* Global Threat Arcs and Vectors */}
         {vectors.map((v) => {
