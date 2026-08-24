@@ -13,7 +13,7 @@ Sentinel includes a full-screen dynamic **Kaspersky-inspired Threat Map Watermar
 ---
 
 ### 🔮 Pipeline Architecture Overview
-![AegisFlow Sentinel Pipeline Architecture](public/cyber_architecture_clean.png)
+![AegisFlow Sentinel Pipeline Architecture](public/cyber_architecture_dark.png)
 
 ### 🎬 Pipeline Walkthrough (Motion Graphics)
 ![Interactive Simulation Demo](public/cyber_vibes_preview.webp)

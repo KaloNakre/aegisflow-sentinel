@@ -208,37 +208,37 @@ export function ProcessArchitecture() {
               d="M 50 120 L 200 60" 
               stroke="url(#grad-sop)" 
               strokeWidth={activeNode === 'ingress' || activeNode === 'sop' ? "3" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'sop' ? "none" : "5 5"}
+              strokeDasharray="5 5"
               filter={activeNode === 'ingress' || activeNode === 'sop' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'sop') ? 'animate-[dash_1s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(activeNode === 'ingress' || activeNode === 'sop' || simulationStep === 0) ? 'animate-[dash_3s_linear_infinite]' : 'animate-[dash_15s_linear_infinite]'}`} 
             />
             <path 
               d="M 50 120 L 200 180" 
               stroke="url(#grad-model)" 
               strokeWidth={activeNode === 'ingress' || activeNode === 'model' ? "3" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'model' ? "none" : "5 5"}
+              strokeDasharray="5 5"
               filter={activeNode === 'ingress' || activeNode === 'model' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'ingress' || activeNode === 'model') ? 'animate-[dash_1.5s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(activeNode === 'ingress' || activeNode === 'model' || simulationStep === 2) ? 'animate-[dash_3s_linear_infinite]' : 'animate-[dash_15s_linear_infinite]'}`} 
             />
             <path 
               d="M 200 60 L 350 120" 
               stroke="url(#grad-sop-siem)" 
               strokeWidth={activeNode === 'sop' || activeNode === 'siem' ? "3" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 || activeNode === 'sop' || activeNode === 'siem' ? "none" : "5 5"}
+              strokeDasharray="5 5"
               filter={activeNode === 'sop' || activeNode === 'siem' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'sop' || activeNode === 'siem') ? 'animate-[dash_1.2s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(activeNode === 'sop' || activeNode === 'siem' || simulationStep === 1) ? 'animate-[dash_3s_linear_infinite]' : 'animate-[dash_15s_linear_infinite]'}`} 
             />
             <path 
               d="M 200 180 L 350 120" 
               stroke="url(#grad-model-siem)" 
               strokeWidth={activeNode === 'model' || activeNode === 'siem' ? "3" : "1.5"} 
-              strokeDasharray={simulationStep >= 0 || activeNode === 'model' || activeNode === 'siem' ? "none" : "5 5"}
+              strokeDasharray="5 5"
               filter={activeNode === 'model' || activeNode === 'siem' ? "url(#glow-path)" : "none"}
               fill="none" 
-              className={`transition-all duration-300 ${(simulationStep >= 0 || activeNode === 'model' || activeNode === 'siem') ? 'animate-[dash_1.4s_linear_infinite]' : ''}`} 
+              className={`transition-all duration-300 ${(activeNode === 'model' || activeNode === 'siem' || simulationStep === 3) ? 'animate-[dash_3s_linear_infinite]' : 'animate-[dash_15s_linear_infinite]'}`} 
             />
 
             {/* Flowing animated signal packets (Normal Mode) */}

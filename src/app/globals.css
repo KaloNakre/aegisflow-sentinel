@@ -13,6 +13,13 @@
   --color-status-red: #ef4444;
   --font-sans: "Inter", var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
+  
+  --animate-dash: dash 20s linear infinite;
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
 }
 
 body {
